@@ -121,7 +121,7 @@ public class KeycloakImpl  implements IKeycloakService {
         RealmResource realmResource = keycloakProvider.getRealmResource();
         List<RoleRepresentation> roles = null;
         if (Objects.isNull(userDTO.roles()) || userDTO.roles().isEmpty()) {
-            roles = List.of(realmResource.roles().get("user").toRepresentation());
+            roles = List.of(realmResource.roles().get("R_USER").toRepresentation());
         } else
             roles = realmResource.roles().list().stream()
                     .filter(role -> userDTO.roles().contains(role.getName()))
